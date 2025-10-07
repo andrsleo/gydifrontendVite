@@ -1,0 +1,27 @@
+src/
+│── assets/ # Imágenes, íconos SVG, fuentes
+│── components/ # Componentes atómicos y reusables
+│ ├── ui/ # UI genérica (Button, Input, Card, Modal, etc.)
+│ └── layout/ # Layouts de páginas (Navbar, Sidebar, Footer)
+│
+│── features/ # Funcionalidades (agrupadas por dominio)
+│ └── auth/ # Módulo de autenticación
+│ ├── components/ # Componentes específicos de auth (ej: LoginForm)
+│ ├── hooks/ # Hooks específicos de auth (useLogin, useAuth)
+│ ├── schemas/ # Validaciones Zod para formularios de auth
+│ ├── services/ # Llamadas a API relacionadas con auth
+│ └── context/ # AuthProvider y AuthContext
+│
+│── pages/ # Páginas principales (ruteadas con React Router)
+│ ├── LoginPage.jsx
+│ ├── DashboardPage.jsx
+│ └── NotFoundPage.jsx
+│
+│── routes/ # Configuración centralizada de rutas
+│ └── AppRouter.jsx
+│
+│── hooks/ # Hooks globales compartidos (useFetch, useToggle)
+│── utils/ # Helpers y funciones puras (ej: formatDate, validators)
+│── styles/ # Estilos globales (index.css con Tailwind)
+│── App.jsx # Entry point principal
+│── main.jsx # Render principal (ReactDOM)
