@@ -1,69 +1,42 @@
-# React + TypeScript + Vite
+# GYDI Frontend (Vite) — Legacy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> ⚠️ **Superseded by [GydiFrontNext](https://github.com/andrsleo/GydiFrontNext)** (Next.js 15). This repo was GYDI's first frontend iteration and is kept for reference.
 
-Currently, two official plugins are available:
+First-generation web client for **GYDI**, the vacation-property affiliate platform. SPA built with React 19 + Vite, later replaced by a Next.js 15 app to gain SSR/ISR and better SEO for property listings.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19 + TypeScript, Vite 7 (SWC)
+- React Router 7
+- React Hook Form + Zod 4
+- TailwindCSS 3.4, lucide-react, react-icons
+- Environments: .env.development / .env.test / .env.production
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/andrsleo/gydifrontendVite.git
+cd gydifrontendVite
+npm install
+npm run dev       # http://localhost:5173
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev       # dev server
+npm run build     # type-check + build
+npm run preview   # preview build
+npm run lint      # ESLint
 ```
+
+## Why it was replaced
+
+The affiliate platform needed **SEO-indexable property pages** (SSR/ISR), **server components**, and a BFF layer — capabilities that motivated the migration to Next.js 15 in [GydiFrontNext](https://github.com/andrsleo/GydiFrontNext). This migration is itself a useful case study of choosing rendering strategy by business need.
+
+---
+Built by [Andrés Vargas](https://github.com/andrsleo) · Property of GYDI
